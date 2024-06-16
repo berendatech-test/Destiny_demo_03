@@ -1,0 +1,63 @@
+import Schedule from "../components/Schedule";
+
+const Academics = () => {
+  return (
+    <div className="academics">
+      <h1 className="title">Academics</h1>
+      <div className="sub-academics">
+        <div className="academics-header-left">
+          <h2>School Curriculum</h2>{" "}
+          <p>
+            The new curriculum has been implemented from 1st to 8th grade in our
+            academy since the start of the new academic year 2015 EC.
+          </p>
+        </div>
+        <div>
+          <img src="/curriculum.png" alt="curriculum image" />
+        </div>
+      </div>
+      <h1 className="title">Bell Schedule</h1>
+      <Schedule />
+      <div className="programs-container">
+        <div className="programs library-resources">
+          <div className="content-wrapper">
+            <img
+              src="books.jpg"
+              alt="Library Resources Image"
+              className="programs-image"
+            />
+            <div className="text-content">
+              <h2>Library Resources</h2>
+              <p>
+                Explore a vast collection of books, digital resources, and
+                interactive learning tools in our school library. Our resources
+                are designed to foster a love for reading and support student
+                learning across all subjects.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div className="programs special-programs">
+          <div className="content-wrapper">
+            <img
+              src="programs.jpg"
+              alt="Special Academic Programs Image"
+              className="programs-image"
+            />
+            <div className="text-content">
+              <h2>Special Academic Programs</h2>
+              <p>
+                Our special academic programs provide enriched learning
+                opportunities for students. From gifted and talented programs to
+                STEM initiatives, we offer a range of programs to inspire and
+                challenge our students.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Academics;
