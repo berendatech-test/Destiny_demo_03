@@ -57,7 +57,9 @@ const Blog = () => {
               key={item.id}
               data-aos="fade-right"
             >
-              <img src={item.image} alt={item.title} />
+              <a href={item.image} target="_blank">
+                <img src={item.image} alt={item.title} />
+              </a>
 
               <div>
                 <h2>{item.title}</h2>

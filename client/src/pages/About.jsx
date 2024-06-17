@@ -1,8 +1,16 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 export default function AboutUs() {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
+
   return (
     <div className="overview">
       <header>
-        <h2>
+        <h2 className="animation" data-aos="fade-right">
           Our Vision<span className="underline"></span>
         </h2>
       </header>
@@ -13,7 +21,7 @@ export default function AboutUs() {
       </i>
       <br />
       <br />
-      <p className="overview_p">
+      <p className="overview_p animation" data-aos="fade-left">
         <b className="first-letter">D</b>estiny Academy strives to have a
         positive impact on society through values-based education. Teachers are
         committed to educating the whole child–mentally, physically,
@@ -29,7 +37,7 @@ export default function AboutUs() {
       </p>
       <div className="principal-msg">
         <img src="/principal.png" alt="principal image" />
-        <div>
+        <div className="animation" data-aos="fade-left">
           <h1>Principal&#39;s Message</h1>
           <p>
             <i>

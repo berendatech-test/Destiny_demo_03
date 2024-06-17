@@ -1,11 +1,17 @@
 import Schedule from "../components/Schedule";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 const Academics = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
   return (
     <div className="academics">
       <h1 className="title">Academics</h1>
       <div className="sub-academics">
-        <div className="academics-header-left">
+        <div className="academics-header-left animation" data-aos="fade-right">
           <h2>School Curriculum</h2>{" "}
           <p>
             The new curriculum has been implemented from 1st to 8th grade in our
@@ -18,7 +24,7 @@ const Academics = () => {
       </div>
       <h1 className="title">Bell Schedule</h1>
       <Schedule />
-      <div className="programs-container">
+      <div className="programs-container animation" data-aos="zoom-in">
         <div className="programs library-resources">
           <div className="content-wrapper">
             <img

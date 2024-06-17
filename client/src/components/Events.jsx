@@ -1,6 +1,13 @@
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
+
 const Events = () => {
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
   return (
-    <div className="section-container">
+    <div className="section-container animation" data-aos="zoom-in">
       <div className="section latest-news">
         <img
           src="/school_news.jpg"

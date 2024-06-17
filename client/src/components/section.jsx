@@ -2,13 +2,19 @@ import IMG2 from "/image1.png";
 import { IoMdHappy } from "react-icons/io";
 import { IoMdArrowDropdown, IoMdSchool } from "react-icons/io";
 import { MdHealthAndSafety } from "react-icons/md";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Events from "./Events";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 const Section = () => {
   const [accordionOne, setAccordionOne] = useState(false);
   const [accordionTwo, setAccordionTwo] = useState(false);
   const [accordionThree, setAccordionThree] = useState(false);
+
+  useEffect(() => {
+    AOS.init({ duration: 1500 });
+  }, []);
 
   return (
     <>
@@ -16,7 +22,7 @@ const Section = () => {
         <div className="value-img">
           <img src={IMG2} alt="value" />
         </div>
-        <div className="value-right">
+        <div className="value-right animation" data-aos="fade-left">
           <div className="accordion-title">
             <h2 style={{ color: "#FFA500" }}>Our Value</h2>
             <h1 style={{ color: "#1F3E72" }}>Value We Give to You</h1>

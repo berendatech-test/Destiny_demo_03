@@ -5,6 +5,10 @@
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   scroll-behavior: smooth;
 }
+body,
+html {
+  overflow-x: hidden;
+}
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -12,9 +16,17 @@
   height: 60px;
   padding: 2% 3%;
   background: #011e3d;
-  backdrop-filter: blur(1px);
   box-shadow: 0 0 9px 1px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
 }
+.navbar-home {
+  background: transparent;
+  box-shadow: none;
+  position: absolute;
+}
+
 .navbar img {
   width: 50px;
   height: 50px;
@@ -42,6 +54,7 @@
   height: 90vh;
   overflow: hidden;
   background-attachment: fixed;
+  background-size: cover;
 }
 .home-btn {
   box-shadow: -1px 2px 5px #0ff;
@@ -103,7 +116,7 @@
 .home-container button:hover {
   border-radius: 1px;
   background: #f96106;
-  scale: 1.09;
+  transform: scale(1.09);
 }
 /* events component */
 .section-container {
@@ -750,6 +763,7 @@ footer p {
     width: 100%;
   }
 }
+
 @media screen and (max-width: 600px) {
   .container.contact__container {
     width: 100%;
