@@ -1,28 +1,17 @@
 import { Link } from "react-router-dom";
 import LOGO from "/Logo.png";
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useState } from "react";
+import { MdMenu, MdClose } from "react-icons/md";
+
 const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const [toggle, setToggle] = useState(true);
 
-  // Function to handle scroll event
-  const handleScroll = () => {
-    const scrollTop = window.scrollY;
-    if (scrollTop > 50) {
-      setScrolled(true);
-    } else {
-      setScrolled(false);
-    }
+  const handleToggle = () => {
+    setToggle(!toggle);
   };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
 
   return (
     <header className={isHomePage ? "navbar navbar-home" : "navbar"}>
@@ -32,14 +21,40 @@ const Navbar = () => {
         </Link>
       </div>
 
-      <div className="nav-links">
-        <Link to="/">Home</Link>
-        <Link to="/about">About</Link>
-        <Link to="/academics">Academics</Link>
-        <Link to="/gallery">Gallery</Link>
-        <Link to="/blog">Blog</Link>
-        <Link to="/contact">Contact</Link>
-      </div>
+      <nav>
+        <div className="nav-links">
+          <ul style={toggle ? { left: "-100%" } : { left: "0" }}>
+            <li onClick={!toggle}>
+              <Link to="/">Home</Link>
+            </li>
+            <li onClick={!toggle}>
+              <Link to="/about">About</Link>
+            </li>
+            <li onClick={!toggle}>
+              <Link to="/academics">Academics</Link>
+            </li>
+            <li onClick={!toggle}>
+              <Link to="/gallery">Gallery</Link>
+            </li>
+            <li onClick={!toggle}>
+              <Link to="/blog">Blog</Link>
+            </li>
+            <li onClick={!toggle}>
+              <Link to="/contact">Contact</Link>
+            </li>
+          </ul>
+          <div className="check_btn_container">
+            <input type="checkbox" id="check" name="check" />
+            <label
+              htmlFor="check"
+              className="navbar_checkBtn"
+              onMouseEnter={handleToggle}
+            >
+              {toggle ? <MdMenu /> : <MdClose />}
+            </label>
+          </div>
+        </div>
+      </nav>
     </header>
   );
 };

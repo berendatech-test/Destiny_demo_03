@@ -24,7 +24,7 @@ const Home = () => {
           </p>
 
           <a href="#value">
-            <button className="home-btn">START EXPOLORING</button>
+            <button className="home-btn">EXPLORE</button>
           </a>
 
           <div className="awards-container">

@@ -11,15 +11,15 @@ const Academics = () => {
     <div className="academics">
       <h1 className="title">Academics</h1>
       <div className="sub-academics">
+        <div className="academics-header-right">
+          <img src="/curriculum.png" alt="curriculum image" />
+        </div>
         <div className="academics-header-left animation" data-aos="fade-right">
           <h2>School Curriculum</h2>{" "}
           <p>
             The new curriculum has been implemented from 1st to 8th grade in our
             academy since the start of the new academic year 2015 EC.
           </p>
-        </div>
-        <div>
-          <img src="/curriculum.png" alt="curriculum image" />
         </div>
       </div>
       <h1 className="title">Bell Schedule</h1>

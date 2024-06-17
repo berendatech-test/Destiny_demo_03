@@ -43,7 +43,7 @@ const theme = createTheme({
 });
 
 const columns = [
-  { field: "id", headerName: "ID", width: 90 },
+  { field: "id", headerName: "No.", width: 90 },
   { field: "bell", headerName: "Bell", width: 150 },
   {
     field: "localTime",
