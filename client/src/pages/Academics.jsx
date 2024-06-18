@@ -40,6 +40,9 @@ const Academics = () => {
                 are designed to foster a love for reading and support student
                 learning across all subjects.
               </p>
+              <a href="/library">
+                <button className="btn">Learn More</button>
+              </a>
             </div>
           </div>
         </div>
@@ -58,6 +61,9 @@ const Academics = () => {
                 STEM initiatives, we offer a range of programs to inspire and
                 challenge our students.
               </p>
+              <a href="/programs">
+                <button className="btn">Learn More</button>
+              </a>
             </div>
           </div>
         </div>

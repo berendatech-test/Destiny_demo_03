@@ -7,6 +7,8 @@ import Contact from "./pages/Contact";
 import Blog from "./pages/News";
 import Academics from "./pages/Academics";
 import Gallery from "./pages/Gallery";
+import Library from "./pages/Library";
+import SpecialPrograms from "./pages/SpecialPrograms";
 
 const App = () => (
   <Router>
@@ -16,6 +18,8 @@ const App = () => (
         <Route path="/blog" element={<Blog />} />
         <Route path="/about" element={<AboutUs />} />
         <Route path="/academics" element={<Academics />} />
+        <Route path="/library" element={<Library />} />
+        <Route path="/programs" element={<SpecialPrograms />} />
         <Route path="/gallery" element={<Gallery />} />
         <Route path="/contact" element={<Contact />} />
       </Route>

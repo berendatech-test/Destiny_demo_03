@@ -10,10 +10,10 @@ const Blog = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const res = await axios.get("http://127.0.0.1:8000/blogs");
-        console.log(res.data);
+        const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/blogs`);
+        console.log("API Response:", res.data); // Log the API response
 
-        if (res.data && res.data.length > 0) {
+        if (Array.isArray(res.data) && res.data.length > 0) {
           setNews(res.data);
           const initialReadMoreState = {};
           res.data.forEach((item) => {
@@ -21,14 +21,15 @@ const Blog = () => {
           });
           setReadMore(initialReadMoreState);
         } else {
-          console.warn("No news data available");
+          console.warn("No news data available or invalid response format");
         }
       } catch (error) {
         console.error("Error fetching news data:", error);
       }
     };
+
     fetchData();
-  }, []);
+  }, []); // Empty dependency array ensures this effect runs only once
 
   useEffect(() => {
     AOS.init({ duration: 1500 });
@@ -57,7 +58,7 @@ const Blog = () => {
               key={item.id}
               data-aos="fade-right"
             >
-              <a href={item.image} target="_blank">
+              <a href={item.image} target="_blank" rel="noopener noreferrer">
                 <img src={item.image} alt={item.title} />
               </a>
 
