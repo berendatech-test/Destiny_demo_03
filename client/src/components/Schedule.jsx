@@ -28,20 +28,21 @@ const theme = createTheme({
           boxShadow: "0 2px 5px rgba(0,0,0,0.1)",
         },
         rowOdd: {
-          backgroundColor: "#FFA500", // Orange background for odd rows
+          backgroundColor: "#FFA500",
         },
         rowEven: {
-          backgroundColor: "#fff", // White background for even rows
+          backgroundColor: "#fff",
         },
         cell: {
           display: "flex",
           alignItems: "center",
           textAlign: "center",
           fontSize: 14,
-          color: "#333",
+          color: "#000",
+          backgroundColor: "orange",
         },
         "& .MuiDataGrid-cell:hover": {
-          backgroundColor: "#ffe0b2", // Light orange on hover
+          backgroundColor: "#ffe0b2",
         },
       },
     },
@@ -564,7 +565,7 @@ export default function Schedule() {
             disableRowSelectionOnClick
             disableColumnMenu
             disableSelectionOnClick
-            rowHeight={45}
+            rowHeight={37}
             classes={{
               rowOdd: "row-odd",
               rowEven: "row-even",

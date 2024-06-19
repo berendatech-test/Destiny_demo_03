@@ -2,14 +2,17 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import AOS from "aos";
 import "aos/dist/aos.css";
+import Loader from "../components/Loader";
 
 const Blog = () => {
   const [news, setNews] = useState([]);
   const [readMore, setReadMore] = useState({});
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
+        setLoading(true);
         const res = await axios.get(`${import.meta.env.VITE_SERVER_URL}/blogs`);
         console.log("API Response:", res.data); // Log the API response
 
@@ -20,16 +23,19 @@ const Blog = () => {
             initialReadMoreState[item.id] = false;
           });
           setReadMore(initialReadMoreState);
+          setLoading(false);
         } else {
           console.warn("No news data available or invalid response format");
+          setLoading(false);
         }
       } catch (error) {
         console.error("Error fetching news data:", error);
+        setLoading(false);
       }
     };
 
     fetchData();
-  }, []); // Empty dependency array ensures this effect runs only once
+  }, []);
 
   useEffect(() => {
     AOS.init({ duration: 1500 });
@@ -41,6 +47,10 @@ const Blog = () => {
       [id]: !prevReadMore[id],
     }));
   };
+
+  if (loading) {
+    return <Loader />;
+  }
 
   return (
     <div className="news">
