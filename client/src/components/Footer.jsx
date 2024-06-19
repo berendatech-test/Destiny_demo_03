@@ -76,6 +76,16 @@ const Footer = () => {
             </li>
           </ul>
         </div>
+        <span
+          style={{
+            color: "white",
+            position: "relative",
+            bottom: "-40px",
+            fontWeight: "100",
+          }}
+        >
+          Address: Midway, Gofa to German Square, Addis Ababa, Ethiopia
+        </span>
       </div>
       <div class="bottom-details">
         <div class="bottom_text">

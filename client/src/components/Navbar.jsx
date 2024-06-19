@@ -34,6 +34,9 @@ const Navbar = () => {
               <Link to="/academics">Academics</Link>
             </li>
             <li onClick={!toggle}>
+              <Link to="/library">Resources</Link>
+            </li>
+            <li onClick={!toggle}>
               <Link to="/gallery">Gallery</Link>
             </li>
             <li onClick={!toggle}>

@@ -56,7 +56,7 @@ const Blog = () => {
     <div className="news">
       <header>
         <h2 data-aos="fade-right" className="animation">
-          Recent Post<span className="underline"></span>
+          Recent Blogs<span className="underline"></span>
         </h2>
       </header>
 

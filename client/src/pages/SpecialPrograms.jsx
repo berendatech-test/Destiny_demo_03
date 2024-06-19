@@ -4,6 +4,14 @@ import { Link } from "react-router-dom"; // Assuming you are using React Router 
 const SpecialPrograms = () => {
   return (
     <div className="special-programs-page">
+      <div className="library-header">
+        <h1 className="title" style={{ textAlign: "center", flex: "1" }}>
+          Special Programs
+        </h1>
+        <Link to="/library">
+          <i>Library</i>
+        </Link>
+      </div>
       <div className="content-wrapper">
         <img
           src="programs.jpg"
@@ -11,7 +19,6 @@ const SpecialPrograms = () => {
           className="programs-image"
         />
         <div className="text-content">
-          <h2>Special Academic Programs</h2>
           <p>
             At our school, we are committed to providing specialized classes and
             support for students with special needs. These programs are designed
