@@ -88,8 +88,12 @@ WSGI_APPLICATION = 'destinyBackend.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'verceldb',
+        'USER': 'default',
+        'PASSWORD': 'TEtWbV5OA1JH',
+        'HOST': 'ep-soft-shadow-a45l6f4d-pooler.us-east-1.aws.neon.tech',
+        'PORT': '5432',
     }
 }
 
